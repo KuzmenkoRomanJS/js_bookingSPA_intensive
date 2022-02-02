@@ -1,7 +1,6 @@
-"use strict";
-
 import start from "./modules/start.js";
 import getFormPerson from "./modules/formPerson.js";
+import readyPlane from "./modules/readyPlane.js";
 
 const init = (selectorApp, title) => {
   const app = document.querySelector(selectorApp);
@@ -15,7 +14,9 @@ const init = (selectorApp, title) => {
     firstForm.remove();
 
     main.append(...forms);
-  });
+
+    readyPlane(forms, main);
+  })
 };
 
 init(".app", "Выбирите тур");
